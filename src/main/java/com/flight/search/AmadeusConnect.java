@@ -26,6 +26,13 @@ enum AmadeusConnect {
 		return amadeus.shopping.flightOffersSearch.get(Params.with("originLocationCode", origin)
 				.and("destinationLocationCode", destination).and("departureDate", departDate)
 				.and("returnDate", returnDate).and("adults", adults).and("max", 3));
+
+
 	}
+	 public FlightPrice confirm(FlightOfferSearch offer) throws ResponseException {
+        return amadeus.shopping.flightOffersSearch.pricing.post(offer);
+    } 
+    
+    
 
 }
