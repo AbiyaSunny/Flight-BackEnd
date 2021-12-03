@@ -20,12 +20,6 @@ import com.amadeus.resources.Location;
 @RequestMapping("/api")
 public class LocationSearch {
 
- 
-	@GetMapping("/")
-	public String home() {
-		return "Hello World!";
-	}
-
     @GetMapping("/locations")
     public Location [] locations(@RequestParam(required=true) String keyword) throws ResponseException {
         return AmadeusConnect.INSTANCE.locations(keyword);
