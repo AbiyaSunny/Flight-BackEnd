@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LocationSearchApplication {
+public class FlightSearchApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LocationSearchApplication.class, args);
