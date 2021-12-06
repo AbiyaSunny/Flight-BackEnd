@@ -1,6 +1,6 @@
-package com.flight.model;
+package com.flight.search.model;
 
-public class FlightOfferSearchResponse {
+public class FlightOfferSearchResponseModel {
 	private int id;
 	private String originIataCode;
 	private String destinationIataCode;
@@ -18,7 +18,7 @@ public class FlightOfferSearchResponse {
 	private String weightUnit;
 	private int baggageQuantity;
 
-	public FlightOfferSearchResponse(int id, String originIataCode, String destinationIataCode, String departureDate,
+	public FlightOfferSearchResponseModel(int id, String originIataCode, String destinationIataCode, String departureDate,
 			String returnDate, int adults, String travelClass, String departureTime, String arrivalTime,
 			String carrierName, String duration, float basePrice, int numberOfStops, int baggageWeight,
 			String weightUnit, int baggageQuantity) {

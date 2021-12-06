@@ -1,4 +1,4 @@
-package com.flight.demo;
+package com.flight.search.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.FlightOfferSearch;
+import com.flight.search.AmadeusConnect;
 
 @RestController
-@RequestMapping("/api")
-public class FlightOfferSearchList {
+public class FlightOfferSearchListController {
 	@GetMapping("/flights")
 	public FlightOfferSearch[] flights(@RequestParam(required = true) String origin,
 			@RequestParam(required = true) String destination, @RequestParam(required = true) String departDate,

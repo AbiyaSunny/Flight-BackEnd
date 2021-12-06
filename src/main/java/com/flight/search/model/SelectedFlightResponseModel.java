@@ -1,13 +1,13 @@
-package flight.search.model;
+package com.flight.search.model;
 
-public class SelectedFlightResponse {
+public class SelectedFlightResponseModel {
 	private int baggageWeight;
 	private String weightUnit;
 	private int baggageQuantity;
 	private float basePrice;
 	private float taxAndSurcharges;
 
-	public SelectedFlightResponse(int baggageWeight, String weightUnit, int baggageQuantity, float basePrice,
+	public SelectedFlightResponseModel(int baggageWeight, String weightUnit, int baggageQuantity, float basePrice,
 			float taxAndSurcharges) {
 		super();
 		this.baggageWeight = baggageWeight;
