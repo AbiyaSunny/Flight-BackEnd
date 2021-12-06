@@ -16,7 +16,10 @@ public class FlightOfferSearchListController {
 			@RequestParam(required = true) String destination, @RequestParam(required = true) String departDate,
 			@RequestParam(required = true) String adults, @RequestParam(required = false) String returnDate,
 			@RequestParam(required = true) String travelClass) throws ResponseException {
-		return AmadeusConnect.INSTANCE.flights(origin, destination, departDate, adults, returnDate, travelClass);
+		FlightOfferSearch[] data = AmadeusConnect.INSTANCE.flights(origin, destination, departDate, adults, returnDate,
+				travelClass);
+
+		return data;
 	}
 
 }
