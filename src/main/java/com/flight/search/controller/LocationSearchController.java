@@ -25,9 +25,9 @@ public class LocationSearchController {
 	public LocationSearchResponseModel[] location(@RequestParam(required = true) String keyword)
 			throws ResponseException {
 		RestTemplate restTemplate = new RestTemplate();
-		LocationSearchResponseModel[] loc = restTemplate.getForObject(
+		LocationSearchResponseModel[] locationSearchResponseModel = restTemplate.getForObject(
 				"http://localhost:8080/locations?keyword=" + keyword, LocationSearchResponseModel[].class);
-		return loc;
+		return locationSearchResponseModel ;
 	}
 
 }
