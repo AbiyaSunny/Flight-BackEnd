@@ -1,6 +1,6 @@
 package com.flight.search.model;
 
-public class AddressModel {
+public class Address {
 	private String cityName;
 	private String countryName;
 

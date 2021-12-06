@@ -8,12 +8,12 @@ public class LocationSearchResponseModel {
 	private String name;
 	private String detailedName;
 	private String iataCode;
-	private AddressModel address;
+	private Address address;
 	
-	public AddressModel getAddress() {
+	public Address getAddress() {
 		return address;
 	}
-	public void setAddress(AddressModel address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 	public String getName() {
