@@ -1,6 +1,6 @@
-package com.flight.model;
+package com.flight.search.model;
 
-public class FlightOfferSearchRequest {
+public class FlightOfferSearchRequestModel {
 	private String originLocationCode;
 	private String destinationLocationCode;
 	private String departureDate;
@@ -8,7 +8,7 @@ public class FlightOfferSearchRequest {
 	private int adults;
 	private String travelClass;
 
-	public FlightOfferSearchRequest(String originLocationCode, String destinationLocationCode, String departureDate,
+	public FlightOfferSearchRequestModel(String originLocationCode, String destinationLocationCode, String departureDate,
 			String returnDate, int adults, String travelClass) {
 		super();
 		this.originLocationCode = originLocationCode;
