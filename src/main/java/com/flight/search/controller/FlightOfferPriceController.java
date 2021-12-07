@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.FlightOfferSearch;
 import com.amadeus.resources.FlightPrice;
-import com.flight.search.AmadeusConnect;
+import com.flight.search.amadeusconnection.AmadeusConnect;
 
 @RestController
 public class FlightOfferPriceController {

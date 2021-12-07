@@ -1,5 +1,5 @@
 
-package com.flight.search;
+package com.flight.search.amadeusconnection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
