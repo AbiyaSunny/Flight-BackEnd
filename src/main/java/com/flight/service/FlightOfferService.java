@@ -7,10 +7,12 @@ import com.flight.model.FlightOfferRequestModel;
 
 public class FlightOfferService {
 
+	// wrapper function for calling amadeus api
 	public static FlightOfferSearch[] getDataFromAmadeus(FlightOfferRequestModel request) throws ResponseException {
-
-		return AmadeusConnect.INSTANCE.flights(request.getOrigin(), request.getDestination(), request.getDepartDate(),
-				request.getAdults(), request.getReturnDate(), request.getTravelClass());
-
+		AmadeusConnect amd = new AmadeusConnect();
+		FlightOfferSearch[] flights = amd.flights(request.getClientId(), request.getClientSecret(), request.getOrigin(),
+				request.getDestination(), request.getDepartDate(), request.getAdults(), request.getReturnDate(),
+				request.getTravelClass());
+		return flights;
 	}
 }

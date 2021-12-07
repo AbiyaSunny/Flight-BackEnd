@@ -1,4 +1,4 @@
-package com.flight.demo;
+package com.flight;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,8 +8,6 @@ public class FlightBookingDemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FlightBookingDemoApplication.class, args);
-
-		System.out.println("Welcome");
 
 	}
 
