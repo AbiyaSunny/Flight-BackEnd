@@ -7,7 +7,6 @@ import com.flight.model.FlightOfferRequestModel;
 
 public class FlightOfferService {
 
-	// wrapper function for calling amadeus api
 	public static FlightOfferSearch[] getDataFromAmadeus(FlightOfferRequestModel request) throws ResponseException {
 		AmadeusConnect amd = new AmadeusConnect();
 		FlightOfferSearch[] flights = amd.flights(request.getClientId(), request.getClientSecret(), request.getOrigin(),
