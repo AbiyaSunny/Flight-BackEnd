@@ -16,8 +16,14 @@ public class AmadeusConnect {
 
 		this.amadeus = Amadeus.builder(clientId, clientSecret).build();
 
-		return amadeus.shopping.flightOffersSearch.get(Params.with("originLocationCode", origin)
-				.and("destinationLocationCode", destination).and("departureDate", departDate)
-				.and("returnDate", returnDate).and("adults", adults).and("max", 1).and("travelClass", travelClass));
+		if (returnDate == null) {
+			return amadeus.shopping.flightOffersSearch.get(Params.with("originLocationCode", origin)
+					.and("destinationLocationCode", destination).and("departureDate", departDate).and("adults", adults)
+					.and("max", 1).and("travelClass", travelClass));
+		} else {
+			return amadeus.shopping.flightOffersSearch.get(Params.with("originLocationCode", origin)
+					.and("destinationLocationCode", destination).and("departureDate", departDate)
+					.and("returnDate", returnDate).and("adults", adults).and("max", 1).and("travelClass", travelClass));
+		}
 	}
 }
