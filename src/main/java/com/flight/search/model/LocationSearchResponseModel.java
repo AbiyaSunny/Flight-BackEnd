@@ -1,20 +1,36 @@
 package com.flight.search.model;
 
-	import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+	
 
-	@JsonIgnoreProperties(ignoreUnknown=true)
+	
 	public class LocationSearchResponseModel {
 		
 		private String name;
 		private String detailedName;
 		private String iataCode;
-		private Address address;
+		private String cityname;
+		private String countryName;
 		
-		public Address getAddress() {
-			return address;
+		public LocationSearchResponseModel(String name, String detailedName, String iataCode, String cityname,
+				String countryName) {
+			super();
+			this.name = name;
+			this.detailedName = detailedName;
+			this.iataCode = iataCode;
+			this.cityname = cityname;
+			this.countryName = countryName;
 		}
-		public void setAddress(Address address) {
-			this.address = address;
+		public String getCountryName() {
+			return countryName;
+		}
+		public void setCountryName(String countryName) {
+			this.countryName = countryName;
+		}
+		public String getCityname() {
+			return cityname;
+		}
+		public void setCityname(String cityname) {
+			this.cityname = cityname;
 		}
 		public String getName() {
 			return name;
@@ -37,9 +53,11 @@ package com.flight.search.model;
 		}
 		@Override
 		public String toString() {
-			return "[name=" + name + ", detailedName=" + detailedName + ", iataCode=" + iataCode + "," + address + "]";
+			return "LocationSearchResponseModel [name=" + name + ", detailedName=" + detailedName + ", iataCode="
+					+ iataCode + ", cityname=" + cityname + ", countryName=" + countryName + "]";
 		}
-
+		
+		
 		
 		
 	}
