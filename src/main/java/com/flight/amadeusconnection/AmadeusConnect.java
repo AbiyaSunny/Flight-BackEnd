@@ -19,11 +19,12 @@ public class AmadeusConnect {
 		if (returnDate == null) {
 			return amadeus.shopping.flightOffersSearch.get(Params.with("originLocationCode", origin)
 					.and("destinationLocationCode", destination).and("departureDate", departDate).and("adults", adults)
-					.and("max", 1).and("travelClass", travelClass));
+					.and("max", 1).and("currencyCode", "INR").and("travelClass", travelClass));
 		} else {
-			return amadeus.shopping.flightOffersSearch.get(Params.with("originLocationCode", origin)
-					.and("destinationLocationCode", destination).and("departureDate", departDate)
-					.and("returnDate", returnDate).and("adults", adults).and("max", 1).and("travelClass", travelClass));
+			return amadeus.shopping.flightOffersSearch
+					.get(Params.with("originLocationCode", origin).and("destinationLocationCode", destination)
+							.and("departureDate", departDate).and("returnDate", returnDate).and("adults", adults)
+							.and("max", 1).and("travelClass", travelClass).and("currencyCode", "INR"));
 		}
 	}
 }
