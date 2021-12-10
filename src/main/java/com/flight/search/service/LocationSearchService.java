@@ -10,18 +10,18 @@ import com.flight.search.model.LocationSearchResponseModel;
 
 public class LocationSearchService {
 
-	private static Location[] getLocationsFromAmadeus(String keyword) throws ResponseException {
+	public static Location[] getLocationsFromAmadeus(String keyword) throws ResponseException {
 		return AmadeusConnect.INSTANCE.locations(keyword);
 	}
 
-	private static List<LocationSearchResponseModel> locationToLocationSearchResponseConverter(Location[] location) {
+	public static List<LocationSearchResponseModel> locationToLocationSearchResponseConverter(Location[] location) {
 
 		List<LocationSearchResponseModel> locationResponseModelList = new ArrayList<LocationSearchResponseModel>();
 		for (Location locationObject : location) {
-			locationResponseModelList.add(new LocationSearchResponseModel(locationObject.getName(),
+			LocationSearchResponseModel locationSearchresponseModel= new LocationSearchResponseModel(locationObject.getName(),
 					locationObject.getDetailedName(), locationObject.getIataCode(),
-					locationObject.getAddress().getCityName(), locationObject.getAddress().getCountryName()));
-
+					locationObject.getAddress().getCityName(), locationObject.getAddress().getCountryName());
+			locationResponseModelList.add(locationSearchresponseModel);
 		}
 		return locationResponseModelList;
 	}
