@@ -1,10 +1,12 @@
 package com.flight.search.model;
 
-	
+import java.util.Objects;
 
-	
-	public class LocationSearchResponseModel {
+public class LocationSearchResponseModel {
 		
+		public LocationSearchResponseModel() {
+			super();
+		}
 		private String name;
 		private String detailedName;
 		private String iataCode;
@@ -57,6 +59,22 @@ package com.flight.search.model;
 					+ iataCode + ", cityname=" + cityname + ", countryName=" + countryName + "]";
 		}
 		
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			LocationSearchResponseModel other = (LocationSearchResponseModel) obj;
+			return Objects.equals(cityname, other.cityname) && Objects.equals(countryName, other.countryName)
+					&& Objects.equals(detailedName, other.detailedName) && Objects.equals(iataCode, other.iataCode)
+					&& Objects.equals(name, other.name);
+		}
+		
+		
+	
 		
 		
 		
