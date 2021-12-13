@@ -25,6 +25,7 @@ public class LocationSearchServiceTest {
 		ObjectMapper mapper = new ObjectMapper();
 		LocationSearchResponseModel[] map=mapper.readValue(Paths.get("C://Users/A-10105/Desktop/egencia-  training/actual.json").toFile(),
 				 LocationSearchResponseModel[].class);
-		assertArrayEquals (map,locationsList .toArray());
+		assertThat(locationsList.toArray()).isEqualTo(map);
+		
 }
 }
