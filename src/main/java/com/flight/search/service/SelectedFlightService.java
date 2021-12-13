@@ -21,19 +21,21 @@ public class SelectedFlightService {
 
 		FlightPrice amadeusResponse = AmadeusConnect.INSTANCE.confirm(search);
 		SelectedFlightResponseModel response = new SelectedFlightResponseModel();
-
+		System.out.println("in service");
 		TravelerPricing[] travelerPricings = amadeusResponse.getFlightOffers()[0].getTravelerPricings();
+		System.out.println("read traveller pricings");
 		Itinerary[] itineraries = amadeusResponse.getFlightOffers()[0].getItineraries();
-
+		System.out.println("read itenerary");
 		getPriceDetails(response, travelerPricings);
 
 		List<Segment> outBoundSegments = getBaggageDetails(travelerPricings, itineraries[0].getSegments());
+		System.out.println("got outbounds");
 
 		List<Segment> inBoundSegments = null;
-		if (!amadeusResponse.getFlightOffers()[0].isOneWay()) {
+		if (itineraries.length > 1) {
 			inBoundSegments = getBaggageDetails(travelerPricings, itineraries[1].getSegments());
 		}
-
+		System.out.println("got inBounds");
 		response.setInBoundSegments(inBoundSegments);
 		response.setOutBoundSegments(outBoundSegments);
 
