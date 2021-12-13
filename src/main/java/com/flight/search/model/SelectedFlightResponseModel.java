@@ -1,61 +1,35 @@
 package com.flight.search.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SelectedFlightResponseModel {
-	private int baggageWeight;
-	private String weightUnit;
-	private int baggageQuantity;
-	private float basePrice;
-	private float taxAndSurcharges;
+	private List<Passenger> travelers = new ArrayList<Passenger>();
+	private List<Segment> outBoundSegments = new ArrayList<Segment>();
+	private List<Segment> inBoundSegments = new ArrayList<Segment>();
 
-	public SelectedFlightResponseModel(int baggageWeight, String weightUnit, int baggageQuantity, float basePrice,
-			float taxAndSurcharges) {
-		super();
-		this.baggageWeight = baggageWeight;
-		this.weightUnit = weightUnit;
-		this.baggageQuantity = baggageQuantity;
-		this.basePrice = basePrice;
-		this.taxAndSurcharges = taxAndSurcharges;
+	public List<Passenger> getTravelers() {
+		return travelers;
 	}
 
-	
-	public int getBaggageWeight() {
-		return baggageWeight;
+	public void setTravelers(List<Passenger> travelers) {
+		this.travelers = travelers;
 	}
 
-	public void setBaggageWeight(int baggageWeight) {
-		this.baggageWeight = baggageWeight;
+	public List<Segment> getOutBoundSegments() {
+		return outBoundSegments;
 	}
 
-	public String getWeightUnit() {
-		return weightUnit;
+	public void setOutBoundSegments(List<Segment> outBoundSegments) {
+		this.outBoundSegments = outBoundSegments;
 	}
 
-	public void setWeightUnit(String weightUnit) {
-		this.weightUnit = weightUnit;
+	public List<Segment> getInBoundSegments() {
+		return inBoundSegments;
 	}
 
-	public int getBaggageQuantity() {
-		return baggageQuantity;
-	}
-
-	public void setBaggageQuantity(int baggageQuantity) {
-		this.baggageQuantity = baggageQuantity;
-	}
-
-	public float getBasePrice() {
-		return basePrice;
-	}
-
-	public void setBasePrice(float basePrice) {
-		this.basePrice = basePrice;
-	}
-
-	public float getTaxAndSurcharges() {
-		return taxAndSurcharges;
-	}
-
-	public void setTaxAndSurcharges(float taxAndSurcharges) {
-		this.taxAndSurcharges = taxAndSurcharges;
+	public void setInBoundSegments(List<Segment> inBoundSegments) {
+		this.inBoundSegments = inBoundSegments;
 	}
 
 }
