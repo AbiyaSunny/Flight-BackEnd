@@ -1,5 +1,6 @@
 package com.flight.search.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,12 +12,17 @@ import com.flight.search.amadeusconnection.AmadeusConnect;
 
 @RestController
 public class FlightOfferSearchListController {
+	
+	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping("/flights")
 	public FlightOfferSearch[] flights(@RequestParam(required = true) String origin,
 			@RequestParam(required = true) String destination, @RequestParam(required = true) String departDate,
 			@RequestParam(required = true) String adults, @RequestParam(required = false) String returnDate,
 			@RequestParam(required = true) String travelClass) throws ResponseException {
-		return AmadeusConnect.INSTANCE.flights(origin, destination, departDate, adults, returnDate, travelClass);
+		FlightOfferSearch[] data = AmadeusConnect.INSTANCE.flights(origin, destination, departDate, adults, returnDate,
+				travelClass);
+
+		return data;
 	}
 
 }

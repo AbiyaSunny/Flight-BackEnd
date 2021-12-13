@@ -34,7 +34,7 @@ public enum AmadeusConnect {
 			String returnDate, String travelClass) throws ResponseException {
 		return amadeus.shopping.flightOffersSearch.get(Params.with("originLocationCode", origin)
 				.and("destinationLocationCode", destination).and("departureDate", departDate)
-				.and("returnDate", returnDate).and("adults", adults).and("max", 3).and("travelClass", travelClass));
+				.and("adults", adults).and("max", 3).and("travelClass", travelClass).and("currencyCode", "INR"));
 	}
 
 	public FlightPrice confirm(FlightOfferSearch offer) throws ResponseException {
