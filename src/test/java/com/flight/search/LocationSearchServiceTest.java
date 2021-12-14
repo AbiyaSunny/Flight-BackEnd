@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.assertj.core.util.Arrays;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.amadeus.resources.Location;
@@ -20,12 +21,12 @@ import com.flight.search.service.LocationSearchService;
 
 public class LocationSearchServiceTest {
 
-
-
+@Autowired
+LocationSearchService locationSearchService;
 	
 	@Test
 	public void getLocationsTestPositive() throws Exception {
-		List<LocationSearchResponseModel> locationsList = LocationSearchService.getLocations("COK");
+		List<LocationSearchResponseModel> locationsList = locationSearchService.getLocations("COK");
 		ObjectMapper mapper = new ObjectMapper();
 		LocationSearchResponseModel[] map=mapper.readValue(Paths.get("C://Users/A-10105/Desktop/egencia-  training/actual.json").toFile(),
 				 LocationSearchResponseModel[].class);
@@ -37,7 +38,7 @@ public class LocationSearchServiceTest {
 
 @Test
 public void getLocationsTestNegative() throws Exception {
-	List<LocationSearchResponseModel> locationsList = LocationSearchService.getLocations("COK");
+	List<LocationSearchResponseModel> locationsList = locationSearchService.getLocations("COK");
 	ObjectMapper mapper = new ObjectMapper();
 	LocationSearchResponseModel[] map=mapper.readValue(Paths.get("C://Users/A-10105/Desktop/egencia-  training/negativecase.json").toFile(),
 			 LocationSearchResponseModel[].class);
