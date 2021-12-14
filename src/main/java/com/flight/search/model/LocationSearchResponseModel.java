@@ -4,15 +4,17 @@ import java.util.Objects;
 
 public class LocationSearchResponseModel {
 
-	public LocationSearchResponseModel() {
-		super();
-	}
-
+	
 	private String name;
 	private String detailedName;
 	private String iataCode;
 	private String cityname;
 	private String countryName;
+
+	public LocationSearchResponseModel() {
+		super();
+	}
+
 
 	public LocationSearchResponseModel(String name, String detailedName, String iataCode, String cityname,
 			String countryName) {

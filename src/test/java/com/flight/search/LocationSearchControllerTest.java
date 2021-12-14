@@ -22,7 +22,7 @@ public class LocationSearchControllerTest {
 
     @Test
     public void shouldReturnSuccess() throws Exception {
-        this.mockMvc.perform(get("/locations?keyword=LON"))
+        this.mockMvc.perform(get("/locations/LON"))
                 .andDo(print()).andExpect(status().isOk());
     }
 	

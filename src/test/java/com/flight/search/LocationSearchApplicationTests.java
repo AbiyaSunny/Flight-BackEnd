@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.flight.search.controller.LocationSearchController;
+import com.flight.search.service.LocationSearchService;
 
 @SpringBootTest
 class LocationSearchApplicationTests {
@@ -14,10 +15,15 @@ class LocationSearchApplicationTests {
 	@Autowired
 	LocationSearchController controller;
 	
+	
 	@Test
 	void contextLoads() {
-		assertThat(controller).isNotNull();
-        
+		assertThat(controller).isNotNull();   
 	}
+	
+	
+	
+	
+	
 
 }
