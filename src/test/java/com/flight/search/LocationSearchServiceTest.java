@@ -18,7 +18,6 @@ import com.flight.search.service.LocationSearchService;
 
 
 @SpringBootTest
-
 public class LocationSearchServiceTest {
 
 @Autowired

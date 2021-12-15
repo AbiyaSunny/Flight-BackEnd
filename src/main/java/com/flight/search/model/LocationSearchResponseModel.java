@@ -15,7 +15,6 @@ public class LocationSearchResponseModel {
 		super();
 	}
 
-
 	public LocationSearchResponseModel(String name, String detailedName, String iataCode, String cityname,
 			String countryName) {
 		super();
