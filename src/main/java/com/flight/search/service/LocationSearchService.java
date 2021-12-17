@@ -32,7 +32,7 @@ public class LocationSearchService {
 	}
 
 	public List<LocationSearchResponseModel> getLocations(String keyword) throws ResponseException {
-		return locationToLocationSearchResponseConverter(getLocationsFromAmadeus(keyword));
+		return locationToLocationSearchResponseConverter(getLocationsFromAmadeus(keyword.substring(0,Math.min(keyword.length(), 7))));
 	}
 
 }

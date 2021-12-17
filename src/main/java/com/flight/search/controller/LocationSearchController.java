@@ -12,30 +12,16 @@ import com.amadeus.exceptions.ResponseException;
 import com.flight.search.model.LocationSearchResponseModel;
 import com.flight.search.service.LocationSearchService;
 
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class LocationSearchController {
-	
+
 	@Autowired
 	LocationSearchService locationSearchService;
-	
 
 	@GetMapping("/locations/{keyword}")
-	public List<LocationSearchResponseModel> getLocation(@PathVariable String keyword)
-			throws ResponseException {
+	public List<LocationSearchResponseModel> getLocation(@PathVariable String keyword) throws ResponseException {
 		return locationSearchService.getLocations(keyword);
 	}
 
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
